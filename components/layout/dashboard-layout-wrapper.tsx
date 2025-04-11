@@ -1,4 +1,4 @@
-import Navbar from "./navbar";
+import Navbar from "./header/navbar";
 import Sidebar from "./sidebar";
 
 export default function DashboardLayoutWrapper({
