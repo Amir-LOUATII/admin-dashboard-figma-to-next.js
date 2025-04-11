@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: oklch(0.72 0.23 286); /* Purple */
+  --color-primary-foreground: oklch(0.98 0.01 286);
+
+  --color-secondary: oklch(0.91 0.11 175); /* Mint */
+  --color-secondary-foreground: oklch(0.2 0.02 175);
+
+  --color-accent: oklch(0.95 0.12 95); /* Yellow */
+  --color-accent-foreground: oklch(0.25 0.04 95);
+
+  --color-info: oklch(0.85 0.1 250); /* Sky Blue */
+  --color-info-foreground: oklch(0.18 0.03 250);
+
+  --color-text: oklch(0.2 0.01 270);
+  --color-background: oklch(1 0 0);
+
+  --font-base: "Everett", sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+
+  --color-info: var(--color-info);
+  --color-info-foreground: var(--color-info-foreground);
+
+  --color-text: var(--color-text);
+  --color-background: var(--color-background);
+
+  --font-base: var(--font-base);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-color-text font-[var(--font-base)];
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
