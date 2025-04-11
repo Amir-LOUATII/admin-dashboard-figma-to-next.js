@@ -40,6 +40,6 @@
 
 @layer base {
   body {
-    @apply bg-background text-color-text font-[var(--font-base)];
+    @apply bg-background  font-[var(--font-base)];
   }
 }
