@@ -21,7 +21,7 @@ export default function ProfileDropdown() {
     <div className="relative w-[237px]">
       <button
         onClick={handleToggle}
-        className="w-full h-[58px] rounded-2xl border border-transparent bg-white flex items-center  pe-[18px]"
+        className="w-full h-[58px] rounded-2xl border border-[#F2F2F2] bg-white flex items-center  pe-[18px]"
       >
         <Image
           src={profilePic}

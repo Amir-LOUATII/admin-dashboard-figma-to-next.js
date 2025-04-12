@@ -18,7 +18,7 @@ export default function LanguagesSwitcher() {
     <div className="relative w-[166px] h-[56px]">
       <button
         onClick={toggleDropdown}
-        className="w-full h-[56px] rounded-full flex justify-center gap-1.5 items-center border bg-[#BDBDBD]/20 px-4 "
+        className="w-full h-[56px] rounded-full flex justify-center gap-1.5 items-center border  px-4 border-[#F2F2F2]"
       >
         <span className="text-[#BDBDBD] leading-[1.43]">{selected}</span>
         <span className="flex justify-center items-center mt-0.5">
