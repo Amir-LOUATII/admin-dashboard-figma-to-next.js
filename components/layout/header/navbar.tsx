@@ -1,6 +1,7 @@
 import ToggleSwitch from "@/components/shared/switcher";
 import SearchInput from "./search-input";
 import LanguagesSwitcher from "./languages-switcher";
+import NotificationIcon from "./notification-icon";
 
 export default function Navbar() {
   return (
@@ -8,6 +9,7 @@ export default function Navbar() {
       <SearchInput />
       <ToggleSwitch />
       <LanguagesSwitcher />
+      <NotificationIcon />
     </header>
   );
 }
