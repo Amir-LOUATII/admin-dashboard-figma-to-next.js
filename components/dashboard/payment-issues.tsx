@@ -12,7 +12,6 @@ import {
 import Card from "../shared/card";
 
 export default function PaymentIssuesChart() {
-  // Data is ordered to match the image (a, x, o, n)
   const data = [
     { name: "a", value: 1, color: "#FFB963", label: "Customer errors" },
     { name: "x", value: 5, color: "#FFDA93", label: "Fraud blocks" },
