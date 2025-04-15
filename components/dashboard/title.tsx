@@ -3,7 +3,7 @@ import React from "react";
 import handIcon from "@/assets/icons/handEmoji.png";
 export default function Title() {
   return (
-    <div>
+    <div className="mb-10">
       <div className="flex gap-0.5 justify-start items-center mb-5">
         <Image
           src={handIcon}

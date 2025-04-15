@@ -1,14 +1,14 @@
 "use client";
 
 import {
-  BarChart,
   Bar,
-  XAxis,
-  YAxis,
+  BarChart,
   CartesianGrid,
   ResponsiveContainer,
+  XAxis,
+  YAxis,
 } from "recharts";
-import DashboardDropdownFilter from "./dashboard-dropdown-filter";
+import Card from "../shared/card";
 
 const data = [
   { name: "Mar 1 - 7", amount: 45000 },
@@ -20,9 +20,8 @@ const data = [
 
 export default function EarningsChart() {
   return (
-    <div className="space-y-4">
-      <DashboardDropdownFilter />
-      <div className="h-[300px] w-full">
+    <Card>
+      <div className="h-[392px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
@@ -32,10 +31,15 @@ export default function EarningsChart() {
               tickFormatter={(value) => value.toLocaleString()}
               ticks={[50000, 100000, 150000, 200000]}
             />
-            <Bar dataKey="amount" fill="#ECCCFF" radius={[15, 15, 0, 0]} />
+            <Bar
+              dataKey="amount"
+              fill="#ECCCFF"
+              barSize={79}
+              radius={[15, 15, 0, 0]}
+            />
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </Card>
   );
 }

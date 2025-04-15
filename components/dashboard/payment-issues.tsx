@@ -1,74 +1,87 @@
 "use client";
 
 import {
-  BarChart,
   Bar,
+  BarChart,
+  Cell,
+  LabelList,
+  ResponsiveContainer,
   XAxis,
   YAxis,
-  ResponsiveContainer,
-  Cell,
 } from "recharts";
+import Card from "../shared/card";
 
-const data = [
-  { name: "n", label: "System errors", value: 1, color: "hsl(var(--chart-4))" },
-  { name: "o", label: "Bank errors", value: 3, color: "hsl(var(--chart-3))" },
-  { name: "x", label: "Fraud blocks", value: 5, color: "hsl(var(--chart-2))" },
-  {
-    name: "a",
-    label: "Customer errors",
-    value: 10,
-    color: "hsl(var(--chart-1))",
-  },
-];
+export default function PaymentIssuesChart() {
+  // Data is ordered to match the image (a, x, o, n)
+  const data = [
+    { name: "a", value: 1, color: "#FFB963", label: "Customer errors" },
+    { name: "x", value: 5, color: "#FFDA93", label: "Fraud blocks" },
+    { name: "o", value: 3, color: "#FF7576", label: "Bank errors" },
+    { name: "n", value: 10, color: "#80E0E5", label: "System errors" },
+  ];
 
-export default function PaymentIssues() {
-  const total = data.reduce((acc, item) => acc + item.value, 0);
+  const totalErrors = data.reduce((sum, item) => sum + item.value, 0);
 
   return (
-    <div className="space-y-4">
-      <h3 className="text-lg font-medium">Payment issues</h3>
-      <div className="h-[200px] w-full">
+    <Card title="Payment issues">
+      <div className="h-[250px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            data={data}
             layout="horizontal"
-            margin={{ top: 0, right: 0, bottom: 0, left: -15 }}
+            data={data}
+            margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+            barSize={61}
           >
             <XAxis
               dataKey="name"
-              type="category"
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fontSize: 16, fill: "#999" }}
             />
-            <YAxis hide domain={[0, 12]} />
-            <Bar dataKey="value" barSize={20} radius={[4, 4, 4, 4]}>
+            <YAxis hide />
+            <Bar
+              dataKey="value"
+              isAnimationActive={false}
+              radius={[8, 8, 8, 8]}
+            >
               {data.map((entry, index) => (
-                <Cell key={index} fill={entry.color} />
+                <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
+              <LabelList
+                dataKey="value"
+                position="top"
+                fill="#666"
+                fontSize={18}
+                fontWeight="500"
+                offset={10}
+              />
             </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <div className="space-y-2">
-        <div className="text-sm text-muted-foreground">
+
+      <div className="mt-6 text-center">
+        <div className="mb-4 text-[14px] text-[#FFA14E] font-semibold">
           Total number of errors:{" "}
-          <span className="font-medium text-foreground">{total}</span>
+          <span className="text-[#FFA14E] font-bold text-lg">
+            {totalErrors}
+          </span>
         </div>
-        <div className="grid grid-cols-2 gap-2">
+
+        <div className="flex flex-col gap-3">
           {data.map((item, index) => (
-            <div key={index} className="flex items-center gap-2">
+            <div key={index} className="flex items-center gap-3">
               <div
-                className="w-3 h-3 rounded-full"
+                className="h-[22px] w-[22px] rounded-[8px] flex items-center justify-center text-white text-xs"
                 style={{ backgroundColor: item.color }}
-              />
-              <span className="text-sm text-muted-foreground">
-                {item.label}
-              </span>
+              >
+                {item.name}
+              </div>
+              <div className="text-gray-500 text-left">{item.label}</div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
