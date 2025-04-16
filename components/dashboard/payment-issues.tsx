@@ -67,7 +67,7 @@ export default function PaymentIssuesChart() {
           {data.map((item, index) => (
             <div key={index} className="flex items-center gap-3">
               <div
-                className="h-[22px] w-[22px] rounded-[8px] flex items-center justify-center text-white text-xs"
+                className="h-[26px] w-[26px] rounded-[8px] flex items-center justify-center text-white text-xs p-0.5"
                 style={{ backgroundColor: item.color }}
               >
                 {item.name}
