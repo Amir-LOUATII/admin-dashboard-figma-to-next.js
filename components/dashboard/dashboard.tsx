@@ -8,7 +8,7 @@ import Title from "./title";
 export default function Dashboard() {
   return (
     <div className="w-full overflow-hidden px-9 pt-3">
-      <div className="flex justify-between items-start  gap-32">
+      <div className="flex justify-between items-start  gap-8 w-full">
         <div className=" p-6 rounded-lg  flex-1">
           <Title />
           <DashboardDropdownFilter />

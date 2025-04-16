@@ -7,7 +7,7 @@ export default function DashboardLayoutWrapper({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full flex justify-start items-start min-h-screen">
+    <div className="w-full flex justify-start items-start min-h-screen container mx-auto">
       <Sidebar />
       <div className="flex-1 w-full ">
         <Navbar />
