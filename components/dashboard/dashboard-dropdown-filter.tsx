@@ -16,7 +16,7 @@ const DashboardDropdownFilter = () => {
   };
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left mb-6">
       <div
         className="flex items-center gap-2 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}

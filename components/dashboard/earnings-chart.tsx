@@ -8,7 +8,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import Card from "../shared/card";
 
 const data = [
   { name: "Mar 1 - 7", amount: 45000 },
@@ -20,26 +19,24 @@ const data = [
 
 export default function EarningsChart() {
   return (
-    <Card>
-      <div className="h-[392px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-            <XAxis dataKey="name" className="text-sm text-[#969696]" />
-            <YAxis
-              className="text-sm text-[#969696]"
-              tickFormatter={(value) => value.toLocaleString()}
-              ticks={[50000, 100000, 150000, 200000]}
-            />
-            <Bar
-              dataKey="amount"
-              fill="#ECCCFF"
-              barSize={79}
-              radius={[15, 15, 0, 0]}
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-    </Card>
+    <div className="h-[392px] w-full">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+          <XAxis dataKey="name" className="text-sm text-[#969696]" />
+          <YAxis
+            className="text-sm text-[#969696]"
+            tickFormatter={(value) => value.toLocaleString()}
+            ticks={[50000, 100000, 150000, 200000]}
+          />
+          <Bar
+            dataKey="amount"
+            fill="#ECCCFF"
+            barSize={79}
+            radius={[15, 15, 0, 0]}
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
