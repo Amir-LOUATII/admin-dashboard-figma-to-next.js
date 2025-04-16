@@ -9,11 +9,9 @@ const ToggleSwitch = ({
   label?: string;
   disabled?: boolean;
 }) => {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(true);
   const onToggle = () => {
-    if (!disabled) {
-      setEnabled((prevState) => !prevState);
-    }
+    setEnabled((prevState) => !prevState);
   };
 
   return (
