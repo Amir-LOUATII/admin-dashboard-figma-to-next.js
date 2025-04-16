@@ -38,11 +38,7 @@ export default function PaymentIssuesChart() {
               tick={{ fontSize: 16, fill: "#999" }}
             />
             <YAxis hide />
-            <Bar
-              dataKey="value"
-              isAnimationActive={false}
-              radius={[8, 8, 8, 8]}
-            >
+            <Bar dataKey="value" radius={[8, 8, 8, 8]}>
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
